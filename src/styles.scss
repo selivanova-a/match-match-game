@@ -1,0 +1,9 @@
+$bodyColor: pink;
+
+body {
+  background:$bodyColor;
+  background-image: url("./assets/test-image.jpg");
+  width:810px;
+  height:1080px;
+  background-repeat:repeat-y;
+}
