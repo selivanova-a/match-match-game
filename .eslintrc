@@ -14,5 +14,12 @@
   },
   "plugins": [
     "@typescript-eslint"
-  ]
+  ],
+  "rules": {
+    "import": "off",
+    "import/prefer-default-export": "warn",
+    "padded-blocks": "warn",
+    "no-new": "warn",
+    "class-methods-use-this": "warn"
+  }
 }

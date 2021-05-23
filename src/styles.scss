@@ -1,9 +1,5 @@
-$bodyColor: pink;
+@import "styles/abstract/constants";
+@import "styles/abstract/wrappers";
+@import "styles/base/header";
+@import "styles/pages/cards-field";
 
-body {
-  background:$bodyColor;
-  background-image: url("./assets/test-image.jpg");
-  width:810px;
-  height:1080px;
-  background-repeat:repeat-y;
-}

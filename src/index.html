@@ -2,10 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Match-Match</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/be2d7aec18.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <h1>Test</h1>
-  <img src="./assets/test-image.jpg" alt="test">
+  <header class="header">
+    <div class="header__wrapper">
+      <div class="logo">
+        <div class="logo-first">Match</div>
+        <div class="logo-second">Match</div>
+      </div>
+      <nav class="navigation">
+        <div class="navigation__link">
+          <div class="icon-circle">
+            <div>?</div>
+          </div>
+          <div class="link">About Game</div>
+        </div>
+        <div class="navigation__link">
+          <div class="icon-circle">
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="link">Best Score</div>
+        </div>
+        <div class="navigation__link">
+          <div class="icon-circle">
+            <i class="fas fa-cog"></i>
+          </div>
+          <div class="link">Game Settings</div>
+        </div>
+        <div class="navigation__link active-section">
+          <div class="icon-circle">
+            <i class="fas fa-play"></i>
+          </div>
+          <div class="link">PlAY</div>
+        </div>
+      </nav>
+      <div class="register-button">register new player</div>
+    </div>
+  </header>
+
+  <div class="play-section">
+    <div class="timer">
+      <div class="timer__output">00:01</div>
+    </div>
+
+    <main id="app"></main>
+
 </body>
 </html>

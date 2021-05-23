@@ -1,6 +1,8 @@
 import './styles.scss';
+import { App } from './ts/app';
 
-// console.log('Test');
-
-// const img = require("./assets/test-image.jpg")
-// document.body.innerHTML = `<img src="${img}" alt="test">`;
+window.onload = () => {
+  const appElement = document.getElementById('app');
+  if (!appElement) throw Error('App root element not found');
+  new App(appElement).start();
+};
