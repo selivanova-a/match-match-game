@@ -20,6 +20,7 @@
     "import/prefer-default-export": "warn",
     "padded-blocks": "warn",
     "no-new": "warn",
-    "class-methods-use-this": "warn"
+    "class-methods-use-this": "warn",
+    "no-extra-boolean-cast": "warn"
   }
 }

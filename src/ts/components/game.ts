@@ -2,11 +2,14 @@ import { BaseComponent } from './base-component';
 import { Card } from './card';
 import { CardsField } from './cards-field';
 import { delay } from '../../shared/delay';
+import { Timer } from './timer';
 
 const FLIP_DELAY = 1500;
 
 export class Game extends BaseComponent {
   private readonly cardsField: CardsField;
+
+  private readonly timer: Timer;
 
   private activeCard?: Card;
 
@@ -14,6 +17,7 @@ export class Game extends BaseComponent {
 
   constructor() {
     super();
+    this.timer = new Timer();
     this.cardsField = new CardsField();
     this.element.appendChild(this.cardsField.element);
   }
@@ -28,6 +32,7 @@ export class Game extends BaseComponent {
       card.element.addEventListener('click', () => this.cardHandler(card));
     });
     this.cardsField.addCards(cards);
+    this.timer.startTimer();// Start Timer//////////////////////
   }
 
   private async cardHandler(card: Card) {

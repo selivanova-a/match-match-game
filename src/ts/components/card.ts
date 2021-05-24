@@ -11,6 +11,8 @@ export class Card extends BaseComponent {
     <div class="card">
           <div class="card__front" style="background-image:url('images/${image}')"></div>
           <div class="card__back"></div>
+          <div></div>
+          <div></div>
       </div>
     `;
   }
