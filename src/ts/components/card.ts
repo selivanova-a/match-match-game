@@ -11,8 +11,8 @@ export class Card extends BaseComponent {
     <div class="card">
           <div class="card__front" style="background-image:url('images/${image}')"></div>
           <div class="card__back"></div>
-          <div></div>
-          <div></div>
+          <div class="state state-right none-state"></div>
+          <div class="state state-wrong none-state"></div>
       </div>
     `;
   }
@@ -34,5 +34,21 @@ export class Card extends BaseComponent {
         once: true,
       });
     });
+  }
+
+  showRightSate() {
+    this.element.querySelector('.state-right')?.classList.remove('none-state');
+  }
+
+  showWrongSate() {
+    this.element.querySelector('.state-wrong')?.classList.remove('none-state');
+  }
+
+  deleteRightSate() {
+    this.element.querySelector('.state-right')?.classList.add('none-state');
+  }
+
+  deleteWrongSate() {
+    this.element.querySelector('.state-wrong')?.classList.add('none-state');
   }
 }

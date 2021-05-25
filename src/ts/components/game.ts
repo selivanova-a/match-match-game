@@ -32,7 +32,7 @@ export class Game extends BaseComponent {
       card.element.addEventListener('click', () => this.cardHandler(card));
     });
     this.cardsField.addCards(cards);
-    this.timer.startTimer();// Start Timer//////////////////////
+    this.timer.startTimer();// Start Timer
   }
 
   private async cardHandler(card: Card) {
@@ -48,11 +48,25 @@ export class Game extends BaseComponent {
       return;
     }
 
-    if (this.activeCard.image !== card.image) {
+    if (this.activeCard.image !== card.image) { // Если карты не совпали
+      this.activeCard.showWrongSate();
+      card.showWrongSate();
+
       await delay(FLIP_DELAY);
-      await Promise.all([this.activeCard.flipToBack(), card.flipToBack()]);
+      await Promise.all(
+        [
+          this.activeCard.flipToBack(),
+          card.flipToBack(),
+          this.activeCard.deleteWrongSate(),
+          card.deleteWrongSate(),
+        ],
+      );// Переворачиваем карты обратно
+      this.activeCard.deleteWrongSate();
+      card.deleteWrongSate();
     } else {
-      // Green background
+      this.activeCard.showRightSate();
+      card.showRightSate();
+      // Удалить цвет
     }
 
     this.activeCard = undefined;

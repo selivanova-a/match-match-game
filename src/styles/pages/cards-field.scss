@@ -84,3 +84,24 @@
   margin: 0 auto;
 }
 
+.state {
+  position:absolute;
+  z-index:10;
+  width:16rem;
+  height:16rem;
+  border-radius:1rem;
+
+  &-right {
+    opacity: 0.7;
+    background: $card-right-background;
+  }
+
+  &-wrong {
+    opacity: 0.7;
+    background: $card-wrong-background;
+  }
+}
+
+.none-state {
+  display:none;
+}
