@@ -22,7 +22,8 @@ export class Game extends BaseComponent {
     this.element.appendChild(this.cardsField.element);
   }
 
-  newGame(images: string[]) {
+  newGame(images: string[]): void {
+    this.timer.stopTimer();
     this.cardsField.clear();
     const cards = images
       .concat(images)
@@ -32,7 +33,7 @@ export class Game extends BaseComponent {
       card.element.addEventListener('click', () => this.cardHandler(card));
     });
     this.cardsField.addCards(cards);
-    this.timer.startTimer();// Start Timer
+    this.timer.startTimer();
   }
 
   private async cardHandler(card: Card) {

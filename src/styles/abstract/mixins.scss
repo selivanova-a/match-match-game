@@ -23,3 +23,19 @@
   align-items: center;
   justify-content: center;
 }
+
+@mixin page-wrapper {
+  width: 100rem;
+  height: 80rem;
+  background: $main-background-color;
+  margin: 5rem auto;
+}
+
+@mixin page-title {
+  font-family: $font-family;
+  font-weight: 500;
+  font-size: 20px;
+  color: $pages-title-color;
+  padding-left: 5rem;
+  padding-top: 3rem;
+}

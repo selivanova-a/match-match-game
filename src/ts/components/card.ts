@@ -17,12 +17,12 @@ export class Card extends BaseComponent {
     `;
   }
 
-  flipToBack() {
+  flipToBack(): Promise<void> {
     this.isFlipped = true;
     return this.flip(true);
   }
 
-  flipToFront() {
+  flipToFront(): Promise<void> {
     this.isFlipped = false;
     return this.flip(false);
   }
@@ -36,19 +36,15 @@ export class Card extends BaseComponent {
     });
   }
 
-  showRightSate() {
+  showRightSate(): void {
     this.element.querySelector('.state-right')?.classList.remove('none-state');
   }
 
-  showWrongSate() {
+  showWrongSate(): void {
     this.element.querySelector('.state-wrong')?.classList.remove('none-state');
   }
 
-  deleteRightSate() {
-    this.element.querySelector('.state-right')?.classList.add('none-state');
-  }
-
-  deleteWrongSate() {
+  deleteWrongSate(): void {
     this.element.querySelector('.state-wrong')?.classList.add('none-state');
   }
 }

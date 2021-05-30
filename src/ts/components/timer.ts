@@ -1,12 +1,14 @@
 import { BaseComponent } from './base-component';
 
 export class Timer extends BaseComponent {
+  private timer: ReturnType <typeof setTimeout>;
 
   constructor() {
     super('div', ['timer']);
     this.element.innerHTML = `
       <div class="timer__output">0:00</div>
     `;
+    this.timer = setInterval(() => {}, 1000);
   }
 
   startTimer(): void {
@@ -16,17 +18,17 @@ export class Timer extends BaseComponent {
     const milisecInSec = 1000;
     const secInMin = 60;
 
-    const timer = setInterval(() => {
+    this.timer = setInterval(() => {
       const min = (secInHour / secInMin) % secInMin;
       const sec = (secInHour % secInMin).toLocaleString('en', { minimumIntegerDigits: 2 });
-      if (!!timerOutput) {
+      if (timerOutput) {
         timerOutput.innerHTML = `${Math.trunc(min)}:${sec}`;
       }
       secInHour += oneSecond;
     }, milisecInSec);
   }
 
-  stopTimer(timer: number): void {
-    clearInterval(timer);
+  stopTimer(): void {
+    clearInterval(this.timer);
   }
 }

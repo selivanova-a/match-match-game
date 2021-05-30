@@ -10,18 +10,17 @@ export class CardsField extends BaseComponent {
     super('div', ['cards-field']);
   }
 
-  clear() {
+  clear(): void {
     this.cards = [];
     this.element.innerHTML = '';
   }
 
-  addCards(cards: Card[]) {
+  addCards(cards: Card[]): void {
     this.cards = cards;
     this.cards.forEach((card) => this.element.appendChild(card.element));
 
     setTimeout(() => {
       this.cards.forEach((card) => card.flipToBack());
     }, SHOW_TIME * 1000);
-
   }
 }
