@@ -3,6 +3,7 @@ import { Card } from './card';
 import { CardsField } from './cards-field';
 import { delay } from '../../shared/delay';
 import { Timer } from './timer';
+import { WinMessage } from './win-message';
 
 const FLIP_DELAY = 1500;
 
@@ -15,11 +16,16 @@ export class Game extends BaseComponent {
 
   private isAnimation = false;
 
+  public winCounter = 0;
+
+  private readonly winMessage: WinMessage;
+
   constructor() {
     super();
     this.timer = new Timer();
     this.cardsField = new CardsField();
     this.element.appendChild(this.cardsField.element);
+    this.winMessage = new WinMessage();
   }
 
   newGame(images: string[]): void {
@@ -67,10 +73,28 @@ export class Game extends BaseComponent {
     } else {
       this.activeCard.showRightSate();
       card.showRightSate();
-      // Удалить цвет
+      this.winCounter += 1;
+      if (this.winCounter === 8) {
+        this.winMessage.showWin();
+      }
     }
 
     this.activeCard = undefined;
     this.isAnimation = false;
+  }
+
+  closeWin(): void {
+    const winWrapper = document.querySelector('.win-popup');
+    const winClose = document.querySelector('.close-button-win');
+
+    function closeWin() {
+      if (winWrapper) winWrapper.classList.remove('active');
+    }
+
+    if (winClose) {
+      winClose.addEventListener('click', () => {
+        closeWin();
+      });
+    }
   }
 }

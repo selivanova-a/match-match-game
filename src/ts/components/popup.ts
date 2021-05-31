@@ -41,10 +41,17 @@ export class Popup extends BaseComponent {
     const closeButton = document.querySelector('.close-button');
     const popupWrapper = document.querySelector('.popup');
     const addButton = document.querySelector('.add-button');
-    const playSection = this.element.querySelector('.play-link');
+    const stopButton = document.querySelector('.stop-button');
+    const playButtons = document.querySelector('.game-buttons');
 
     function showHiddenItems() {
-      if (playSection) playSection.classList.remove('button-hidden');
+      if (stopButton) {
+        stopButton.classList.remove('button-hidden');
+        stopButton.addEventListener('click', () => {
+          alert('The game is paused, click OK to continue');
+        });
+      }
+      if (playButtons) playButtons.classList.remove('button-hidden');
     }
 
     function clearInputs() {

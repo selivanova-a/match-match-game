@@ -90,6 +90,33 @@
   box-shadow: $box-shadow;
   font-weight: 500;
   font-size: 1.4rem;
+  cursor:pointer;
+
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.game-buttons {
+  display:flex;
+}
+
+.stop-button {
+  margin-top:1.4rem;
+  background: #E5E5E5;
+  text-transform: uppercase;
+  font-family: $font-family;
+  color: $button-contrast-font-color;
+  background: $main-inner-background;
+  width: 5rem;
+  height: 3.6rem;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  font-weight: 500;
+  font-size: 1.4rem;
+  cursor:pointer;
+  @include center;
+  border:none;
 
   &:hover {
     box-shadow: none;

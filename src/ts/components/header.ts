@@ -30,12 +30,15 @@ export class Header extends BaseComponent {
         </a>
       </nav>
       <div class="register-button">register new player</div>
-      <a href="#Play" class="navigation__link play-link button-hidden">
+      <div class="game-buttons  playButtons button-hidden">
+        <a href="#Play" class="navigation__link play-link button-hidden">
           <div class="icon-circle">
             <i class="fas fa-play"></i>
           </div>
           <div class="link">PlAY</div>
         </a>
+        <button class="stop-button button-hidden">STOP</button>
+      </div>
     </div>
     `;
   }
@@ -45,14 +48,13 @@ export class Header extends BaseComponent {
     const aboutSection = this.element.querySelector('.about-link');
     const scoreSection = this.element.querySelector('.score-link');
     const settingSection = this.element.querySelector('.setting-link');
-
-    // const playSection = this.element.querySelector('.play-link');
+    const playSection = this.element.querySelector('.play-link');
 
     function deleteActiveRout() {
       navSections.forEach((link) => link.classList.remove('active-section'));
     }
 
-    if (aboutSection !== null && scoreSection !== null && settingSection !== null) {
+    if (aboutSection !== null && scoreSection !== null && settingSection !== null && playSection) {
       aboutSection.addEventListener('click', () => {
         deleteActiveRout();
         aboutSection.classList.add('active-section');
@@ -66,6 +68,11 @@ export class Header extends BaseComponent {
       settingSection.addEventListener('click', () => {
         deleteActiveRout();
         settingSection.classList.add('active-section');
+      });
+
+      playSection.addEventListener('click', () => {
+        deleteActiveRout();
+        playSection.classList.add('active-section');
       });
     }
   }

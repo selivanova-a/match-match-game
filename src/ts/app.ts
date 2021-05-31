@@ -6,6 +6,7 @@ import { ImageCategoryModel } from '../models/image-category-model';
 import { Score } from './pages/score';
 import { Settings } from './pages/settings';
 import { Popup } from './components/popup';
+import { WinMessage } from './components/win-message';
 
 export class App {
   private readonly game: Game;
@@ -22,6 +23,8 @@ export class App {
 
   private readonly popup: Popup;
 
+  private readonly winMessage: WinMessage;
+
   constructor(private readonly rootElement: HTMLElement) {
     this.header = new Header();
     this.game = new Game();
@@ -30,6 +33,7 @@ export class App {
     this.scorePage = new Score();
     this.settingsPage = new Settings();
     this.popup = new Popup();
+    this.winMessage = new WinMessage();
     if (this.rootElement.innerHTML === '') {
       this.rootElement.appendChild(this.header.element);
       this.rootElement.appendChild(this.aboutPage.element);
@@ -77,6 +81,8 @@ export class App {
           this.game.element.classList.add('field-wrapper');
           this.startGame();
           this.rootElement.appendChild(this.popup.element);
+          this.rootElement.appendChild(this.winMessage.element);
+          this.game.closeWin();
         },
       },
     ];
