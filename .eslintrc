@@ -1,0 +1,26 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb-typescript/base",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "import": "off",
+    "import/prefer-default-export": "warn",
+    "padded-blocks": "warn",
+    "no-new": "warn",
+    "class-methods-use-this": "warn",
+    "no-extra-boolean-cast": "warn"
+  }
+}
