@@ -15,13 +15,13 @@ export class Popup extends BaseComponent {
       <div class="form">
         <p class="label"> <span class="blue">*</span> First Name</p>
         <input  class="name colortext" type="text" name="first-name" pattern="[A-Za-zА-Яа-я]+"
-         minlength="1" maxlength="10" required placeholder=" Enter your first name">
+         minlength="1" maxlength="30" required placeholder=" Enter your first name">
         <p class="label"> <span class="blue">*</span> Last Name</p>
         <input  class="name-last colortext" type="text" name="last-name"
          pattern="[A-Za-zА-Яа-я]+"
-         minlength="1" maxlength="10" required placeholder=" Enter your last name">
+         minlength="1" maxlength="30" required placeholder=" Enter your last name">
        <p class="label"><span class="blue">*</span> Email</p>
-       <input  class="email colortext" type="email" name="email" required placeholder=" Enter your email">
+       <input  class="email colortext" type="email" name="email" minlength="1" maxlength="30" required placeholder=" Enter your email">
      </div>
      <div class="avatar-img"></div>
     </div>
